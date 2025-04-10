@@ -1,3 +1,5 @@
+My_notes
+
 Data types:--
 
 Note: 
@@ -22,13 +24,29 @@ index starts from 1
 Matrices:
 is used to create equal no of rows and columns kind of matrices.....
 
-g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = TRUE) #BY ROW=TRUE fills by rowsprint(g)
-[1,] "a"  "a"  "b" [2,] "c"  "b"  "a" g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = FALSE) #BY ROW=TRUE fills by rowsprint(g)
- [,1] [,2] [,3][1,] "a"  "b"  "b" [2,] "a"  "c"  "a" 
+g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = TRUE) #BY ROW=TRUE fills by rows
+print(g)
+[1,] "a"  "a"  "b" 
+[2,] "c"  "b"  "a" 
+g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = FALSE) #BY ROW=TRUE fills by rows
+print(g)
+ [,1] [,2] [,3]
+[1,] "a"  "b"  "b" 
+[2,] "a"  "c"  "a" 
 
-M = cbind(c(101, 102, 103),           c(201, 202, 203),            c(301, 302, 303))
-combine rows and create  N = rbind(c(101, 102, 103),            c(201, 202, 203),            c(301, 302, 303))
-combine columns and create    nrow(M)- to know no of rows  ncol(N)- to know no of columns
+M = cbind(c(101, 102, 103),
+           c(201, 202, 203),
+            c(301, 302, 303))
+combine rows and create
+
+  N = rbind(c(101, 102, 103),
+            c(201, 202, 203),
+            c(301, 302, 303))
+combine columns and create
+
+  
+  nrow(M)- to know no of rows
+  ncol(N)- to know no of columns
 
 M[1:3,2]-----> to access all three values in row 2 from 1 to 3 columns
 
@@ -146,11 +164,24 @@ table(data) - to the table representation of data structure
 proportion of table
 prop.table??
 
-# scatterplot of price vs. mileageplot(x = usedcars$mileage, y = usedcars$price,     main = "Scatterplot of Price vs. Mileage",     xlab = "Used Car Odometer (mi.)",     ylab = "Used Car Price ($)")
-usedcars$conservative <-  usedcars$color %in% c("Black", "Gray", "Silver", "White")usedcars$conservativeTest <-  usedcars$color %in% c("Black", "Gray", "Silver", "White","Blue"){ the above conservative is used to add new columns in the data structure}
+# scatterplot of price vs. mileage
+plot(x = usedcars$mileage, y = usedcars$price,
+     main = "Scatterplot of Price vs. Mileage",
+     xlab = "Used Car Odometer (mi.)",
+     ylab = "Used Car Price ($)")
 
 
-library(gmodels)CrossTable(x = usedcars$model, y = usedcars$conservative)
+usedcars$conservative <-
+  usedcars$color %in% c("Black", "Gray", "Silver", "White")
+
+usedcars$conservativeTest <-
+  usedcars$color %in% c("Black", "Gray", "Silver", "White","Blue")
+
+{ the above conservative is used to add new columns in the data structure}
+
+
+library(gmodels)
+CrossTable(x = usedcars$model, y = usedcars$conservative)
 
 Regression:
 Regression is the mathematical relationship between the dependent variable and the independent variable.
