@@ -1,0 +1,196 @@
+Data types:--
+
+Note: 
+assigning a value can be done in two ways
+x=4
+x<-2
+Scalar:-
+
+numeric, character, integer, boolean values, complex numbers, vectors
+
+class(variable) is used to find the data type 
+
+as.integer(variable) is used to convert into int because when integer is assigned it gets converted
+into double
+
+complex numbers- x=3+4i
+
+Vectors:- are similar to array
+x = c(10,2,3,4)
+index starts from 1
+
+Matrices:
+is used to create equal no of rows and columns kind of matrices.....
+
+g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = TRUE) #BY ROW=TRUE fills by rowsprint(g)
+[1,] "a"  "a"  "b" [2,] "c"  "b"  "a" g=matrix(c('a', 'a', 'b', 'c', 'b', 'a'), nrow = 2, ncol = 3, byrow = FALSE) #BY ROW=TRUE fills by rowsprint(g)
+ [,1] [,2] [,3][1,] "a"  "b"  "b" [2,] "a"  "c"  "a" 
+
+M = cbind(c(101, 102, 103),           c(201, 202, 203),            c(301, 302, 303))
+combine rows and create  N = rbind(c(101, 102, 103),            c(201, 202, 203),            c(301, 302, 303))
+combine columns and create    nrow(M)- to know no of rows  ncol(N)- to know no of columns
+
+M[1:3,2]-----> to access all three values in row 2 from 1 to 3 columns
+
+Data Frames:----
+
+data frame in r are in the form of tables like CSV files , excel etc
+
+Table = read.csv("stocks.csv")
+print(Table[1,2])
+p=Table$prices
+you get the total column of prices
+
+rows=which(Table$price <50)
+T2= table[rows,]
+
+Machine Learning in Practice:-
+Data Collection
+Data Exploration and Preparation 
+Model training
+Model Evaluation
+Model Improvement
+
+Way to load packages in R.
+
+library(RWeka)
+
+R Data Structure:-
+
+Vector:-
+
+All the elements in vector must be of the same type.
+• Either all elements are characters or all elements are numeric or logical.
+• Two special values "Null" and "NA" to indicate missing values
+• Vectors created using c()-stands for combine
+
+Factors:-
+A special case of vector that is solely used to represent
+categorical or ordinal variables.
+•Categorical or Nominal variable has one or more categories. e.g.
+(Male, Female)
+•Ordinal variable has clear ordering of its elements e.g. (high, med, low.)
+
+§subjects<-factor(e("Maths""English"))
+
+Lists:-
+Used for storing an ordered set of elements
+• Unlike vector, list is a collection of all kinds of data elements
+subject1 <- list(fullname. = subject_name[1],
+temperature = temperature [1],
+flu_status = flu_status [1],
+gender = gender[1],
+blood = blood[1],
+symptoms = symptoms[1]
+)
+
+Data Frame:-
+
+Most used data structure in R • List of vectors or factors, each having exactly the same number
+of values
+• Syntax : data. frame ()
+• Example:
+emp.data <- data.frame
+emp_ id = c (1:3),
+emp name = c("Pat" "John" "Mike")
+T
+stringsAsFactors=FALSE • If we do not specify "stringsAsFactors=FALSE", R will automatically
+convert every character vector to a factor, and not a data frame.
+
+it is two dimensional and analogous(similar) to spreadsheet
+
+Way to access the data
+
+.Emp.data$emp_name
+• Emp.data[c("emp_name","salary.")]
+
+
+Matrix:-
+
+two dimensional 
+matrix can only contain one type of data elements
+
+m<-matrix(c(1,2,3,4), nrow=2)
+
+
+
+str(variable_name):-
+it gives you what data type it is, number of columns and observations are there.
+
+summary(variable_name)
+it gives you the min, 1st data, median, 3rd quat, max
+
+summary(usedacars[c("","".....)]:-
+it gives the summary of the following columns inside
+
+mean(c())
+
+median(c())
+
+range(usedcare$prrice)
+
+$ dollar is used to specify a particular column
+
+diff(range(usedcars$price))
+
+IQR() interquartile
+
+quantile(usedcars$price) five number summary
+
+boxplot(daata, main="",ylab= "", xlab=""
+
+hist(data,main="",xlab="")-for histogram bar like representation
+
+table(data) - to the table representation of data structure
+
+proportion of table
+prop.table??
+
+# scatterplot of price vs. mileageplot(x = usedcars$mileage, y = usedcars$price,     main = "Scatterplot of Price vs. Mileage",     xlab = "Used Car Odometer (mi.)",     ylab = "Used Car Price ($)")
+usedcars$conservative <-  usedcars$color %in% c("Black", "Gray", "Silver", "White")usedcars$conservativeTest <-  usedcars$color %in% c("Black", "Gray", "Silver", "White","Blue"){ the above conservative is used to add new columns in the data structure}
+
+
+library(gmodels)CrossTable(x = usedcars$model, y = usedcars$conservative)
+
+Regression:
+Regression is the mathematical relationship between the dependent variable and the independent variable.
+Where dependent variables are predicted and independent variables are yet to be predicted.
+
+Use cases of Regression:
+Examining how populations and individuals vary by their measured characteristics
+• Quantifying the causal relationship between an event and the response, such as those in clinical drug trials, engineering safety tests, or marketing research
+• Identifying patterns that can be used to forecast future behavior given known criteria, such as predicting insurance claims, natural disaster damage, election results, and crime raises
+
+Multiple Linear Regression:
+By far the most common approach for modeling numeric data
+• Makes strong assumptions about the data
+• Can be adapted to model almost any modeling task
+• Provides estimates of both the strength and size of 
+
+I need to know what is the purpose for building the model...??
+
+in order to know the performance of the model we can get it by going using 
+summary(model_name)
+inside the summary we need to chech the r-squared value
+
+Regression is done for quantitative variables
+where as 
+Classification is done for qualitative variables.
+
+Nearest Neighbour algorithm:
+Nearest neighbors classifiers are defined by their characteristics of classifying unlabeled cases based on the similarity of labeled cases.
+• For example, if user A and B exhibit the same purchasing behavior, the items purchased by A is also recommended to user B.
+• Nearest neighbors algorithms are used for
+*Recommendations
+•Identifying patterns in data
+• Suited when the data type is homogeneous.
+
+
+k-Nearest Neighbour algorithm:
+
+The letter k is a variable term implying the numbers of neighbors that could be used.
+• For each unlabeled record in the test dataset, k-NN identifies k records in the training data that are the "nearest" in similarity.
+
+how the k means algorithms works is 
+ first it 
+
